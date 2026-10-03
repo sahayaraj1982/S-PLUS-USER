@@ -28,15 +28,16 @@ input{width:100%;padding:13px;margin:7px 0;border-radius:9px;border:1px solid #5
 .whatsapp{background:#25d366;color:#fff}
 .pdf{background:#e53935;color:#fff}
 .table-wrap{margin:0 12px 20px;overflow-x:auto;border:1px solid #333;border-radius:10px}
-table{width:100%;border-collapse:collapse;min-width:430px}
-th{background:#292929;color:var(--gold);padding:9px;font-size:13px}
-td{padding:10px;border-top:1px solid #333;text-align:center;font-size:14px;font-weight:800}
-td.desc{text-align:left;white-space:normal}
+table{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed}
+th{background:#292929;color:var(--gold);padding:9px 4px;font-size:13px;line-height:1.15}
+th:nth-child(1){width:20%}th:nth-child(2){width:23%}th:nth-child(3){width:18%}th:nth-child(4){width:18%}th:nth-child(5){width:21%}
+td{padding:10px 4px;border-top:1px solid #333;text-align:center;font-size:14px;font-weight:800;line-height:1.25;overflow-wrap:anywhere;word-break:break-word}
+td.desc{text-align:center;white-space:normal}
 .credit{color:#35e879;font-weight:800}
 .debit{color:#ff5555;font-weight:800}
 .empty{text-align:center;color:#aaa;padding:25px}
 .loading{text-align:center;color:#aaa;padding:30px}
-@media(max-width:420px){header{font-size:18px}.user-name{font-size:21px}.balance{font-size:25px}}
+@media(max-width:420px){header{font-size:18px}.user-name{font-size:21px}.balance{font-size:25px}.table-wrap{margin-left:8px;margin-right:8px}.table-wrap th{font-size:12px;padding:8px 2px}.table-wrap td{font-size:13px;padding:9px 2px}.balance-cell{font-size:12px!important}}
 @media print{
   body{background:#fff;color:#111}
   .app{max-width:none}
@@ -203,7 +204,7 @@ function showUser(){
       <td class="desc">${esc(t.desc||"")}</td>
       <td class="credit">${Number(t.credit||0)?money(t.credit):"-"}</td>
       <td class="debit">${Number(t.debit||0)?money(t.debit):"-"}</td>
-      <td>${money(x.balance)}</td>
+      <td class="balance-cell">${money(x.balance)}</td>
     </tr>`;
   }).join("");
 }
