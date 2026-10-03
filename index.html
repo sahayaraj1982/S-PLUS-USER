@@ -9,8 +9,10 @@
 *{box-sizing:border-box}
 body{margin:0;background:#111;color:#fff;font-family:Segoe UI,Arial,sans-serif}
 .app{max-width:560px;min-height:100vh;margin:auto;background:#111}
-header{background:linear-gradient(145deg,#ffd700,#9b7b00);color:#111;padding:15px 48px 15px 15px;text-align:center;font-weight:900;font-size:21px;position:relative;box-shadow:0 3px 12px #000}
-.brand-s{font-size:30px;font-weight:1000;line-height:1;margin-right:2px}.gled{position:absolute;right:13px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#111;color:#0f0;border:2px solid #0f0;box-shadow:0 0 13px #0f0;font-weight:900}
+header{background:linear-gradient(145deg,#ffd700,#9b7b00);color:#111;min-height:86px;padding:8px 52px 8px 12px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:21px;position:relative;box-shadow:0 3px 12px #000}
+.header-datetime{position:absolute;left:10px;top:7px;text-align:left;line-height:1.08;font-weight:900;font-size:14px;border:2px solid #6b6b6b;border-radius:8px;padding:6px 9px;background:rgba(20,20,20,.30);box-shadow:0 0 0 1px rgba(255,255,255,.18),0 2px 7px rgba(0,0,0,.35);min-width:76px}
+.header-date{font-size:15px;color:#111}.header-time{font-size:13px;margin-top:5px;color:#111}
+.brand{font-size:21px;font-weight:1000;line-height:1;white-space:nowrap}.brand-s{font-size:30px;font-weight:1000;line-height:1;margin-right:2px}.gled{position:absolute;right:13px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#111;color:#0f0;border:2px solid #0f0;box-shadow:0 0 13px #0f0;font-weight:900}
 .login{padding:35px 20px}
 .login h2{text-align:center;color:var(--gold);margin-bottom:25px}
 input{width:100%;padding:13px;margin:7px 0;border-radius:9px;border:1px solid #555;background:#222;color:#fff;font-size:16px}
@@ -20,13 +22,10 @@ input{width:100%;padding:13px;margin:7px 0;border-radius:9px;border:1px solid #5
 .hidden{display:none!important}
 .user-head{padding:15px 15px 8px;text-align:center}
 .user-name{font-size:24px;font-weight:900;color:var(--gold)}
-.user-mobile{font-size:13px;color:#aaa;margin-top:4px}.user-leader{font-size:15px;color:#25d366;margin-top:5px;font-weight:900}
+.user-mobile{font-size:13px;color:#aaa;margin-top:4px}.user-leader{font-size:19px;color:#25d366;margin-top:5px;font-weight:1000;text-shadow:0 0 1px #000}
 .balance-card{margin:8px 12px 12px;padding:15px;border:2px solid var(--gold);border-radius:12px;background:linear-gradient(145deg,#292300,#171717);text-align:center}
 .balance-card small{display:block;color:#aaa;font-weight:700;font-size:12px}
 .balance{font-size:28px;color:var(--gold);font-weight:900;margin-top:4px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 12px 12px}
-.whatsapp{background:#25d366;color:#fff}
-.pdf{background:#e53935;color:#fff}
 .table-wrap{margin:0 12px 20px;overflow:hidden;border:1px solid #333;border-radius:10px;background:#111}
 table{width:100% !important;min-width:0 !important;max-width:100% !important;border-collapse:collapse;table-layout:fixed}
 th{background:#292929;color:var(--gold);padding:10px 2px;font-size:13px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:clip}
@@ -34,11 +33,13 @@ th:nth-child(1){width:19%}th:nth-child(2){width:24%}th:nth-child(3){width:17%}th
 td{width:auto;padding:10px 2px;border-top:1px solid #333;text-align:center;font-size:14px;font-weight:800;line-height:1.2;overflow:hidden;overflow-wrap:anywhere;word-break:break-word}
 td.desc{text-align:center;white-space:normal}
 td.balance-cell{font-size:13px;white-space:normal}
-.credit{color:#35e879;font-weight:800}
-.debit{color:#ff5555;font-weight:800}
+.credit{color:#fff;font-weight:900}.debit{color:#fff;font-weight:900}
+tr.tx-credit td{background:#16851f;color:#fff;border-color:#249a2e}
+tr.tx-debit td{background:#c9151b;color:#fff;border-color:#e12b31}
+tr.tx-neutral td{background:#292929;color:#fff}
 .empty{text-align:center;color:#aaa;padding:25px}
 .loading{text-align:center;color:#aaa;padding:30px}
-@media(max-width:420px){header{font-size:18px}.user-name{font-size:21px}.balance{font-size:25px}.table-wrap{margin-left:8px;margin-right:8px}.table-wrap table{width:100%!important;min-width:0!important}.table-wrap th{font-size:11px;padding:8px 1px}.table-wrap td{font-size:12px;padding:9px 1px}.table-wrap th:nth-child(1){width:19%}.table-wrap th:nth-child(2){width:24%}.table-wrap th:nth-child(3){width:17%}.table-wrap th:nth-child(4){width:17%}.table-wrap th:nth-child(5){width:23%}.balance-cell{font-size:11px!important}}
+@media(max-width:420px){header{min-height:86px}.brand{font-size:18px}.brand-s{font-size:27px}.header-date{font-size:14px}.header-time{font-size:12px}.user-name{font-size:21px}.balance{font-size:25px}.table-wrap{margin-left:8px;margin-right:8px}.table-wrap table{width:100%!important;min-width:0!important}.table-wrap th{font-size:11px;padding:8px 1px}.table-wrap td{font-size:12px;padding:9px 1px}.table-wrap th:nth-child(1){width:19%}.table-wrap th:nth-child(2){width:24%}.table-wrap th:nth-child(3){width:17%}.table-wrap th:nth-child(4){width:17%}.table-wrap th:nth-child(5){width:23%}.balance-cell{font-size:11px!important}}
 @media print{
   body{background:#fff;color:#111}
   .app{max-width:none}
@@ -54,7 +55,14 @@ td.balance-cell{font-size:13px;white-space:normal}
 <body>
 <div class="app">
 
-<header><span class="brand-s">S</span> PLUS LOAN APP <span class="gled">G</span></header>
+<header>
+  <div class="header-datetime">
+    <div id="headerDate" class="header-date"></div>
+    <div id="headerTime" class="header-time"></div>
+  </div>
+  <div class="brand"><span class="brand-s">S</span> PLUS LOAN</div>
+  <span class="gled">G</span>
+</header>
 
 <div id="loginPage" class="login">
   <h2>🔐 USER LOGIN</h2>
@@ -73,11 +81,6 @@ td.balance-cell{font-size:13px;white-space:normal}
   <div class="balance-card">
     <small>TOTAL BALANCE</small>
     <div id="totalBalance" class="balance">₹ 0</div>
-  </div>
-
-  <div class="actions">
-    <button class="action whatsapp" onclick="shareWhatsApp()">📱 WhatsApp</button>
-    <button class="action pdf" onclick="downloadPDF()">📄 PDF</button>
   </div>
 
   <div class="table-wrap">
@@ -105,6 +108,17 @@ let currentUser = null;
 
 function money(n){
   return "₹ " + Number(n||0).toLocaleString("en-IN");
+}
+
+function shortDate(v){
+  const s=String(v??"").trim();
+  if(!s) return "";
+  // Display dates as D-M-YY, e.g. 2026-10-03 → 3-10-26
+  let m=s.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/);
+  if(m) return `${Number(m[3])}-${Number(m[2])}-${m[1].slice(-2)}`;
+  m=s.match(/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/);
+  if(m) return `${Number(m[1])}-${Number(m[2])}-${m[3].slice(-2)}`;
+  return s;
 }
 
 function esc(v){
@@ -172,6 +186,17 @@ async function loginUser(){
   showUser();
 }
 
+function updateHeaderDateTime(){
+  const now=new Date();
+  const d=now.getDate();
+  const m=now.getMonth()+1;
+  const y=String(now.getFullYear()).slice(-2);
+  document.getElementById("headerDate").textContent=`${d}-${m}-${y}`;
+  document.getElementById("headerTime").textContent=now.toLocaleTimeString("en-IN",{hour12:false});
+}
+updateHeaderDateTime();
+setInterval(updateHeaderDateTime,1000);
+
 function showUser(){
   document.getElementById("loginPage").classList.add("hidden");
   document.getElementById("userPage").classList.remove("hidden");
@@ -200,8 +225,9 @@ function showUser(){
 
   document.getElementById("transactions").innerHTML=prepared.map(x=>{
     const t=x.t;
-    return `<tr>
-      <td>${esc(t.date||"")}</td>
+    const rowClass = Number(t.debit||0) > 0 ? "tx-debit" : (Number(t.credit||0) > 0 ? "tx-credit" : "tx-neutral");
+    return `<tr class="${rowClass}">
+      <td>${esc(shortDate(t.date))}</td>
       <td class="desc">${esc(t.desc||"")}</td>
       <td class="credit">${Number(t.credit||0)?money(t.credit):"-"}</td>
       <td class="debit">${Number(t.debit||0)?money(t.debit):"-"}</td>
@@ -224,7 +250,7 @@ Transactions:
 `;
 
   tx.slice().reverse().forEach((t,i)=>{
-    text+=`${i+1}. ${t.date||""} | ${t.desc||""} | Cr ${money(t.credit)} | Db ${money(t.debit)}\n`;
+    text+=`${i+1}. ${shortDate(t.date)} | ${t.desc||""} | Cr ${money(t.credit)} | Db ${money(t.debit)}\n`;
   });
 
   const url="https://wa.me/?text="+encodeURIComponent(text);
@@ -237,7 +263,7 @@ function downloadPDF(){
   const tx=Array.isArray(currentUser.transactions)?currentUser.transactions:[];
   let rows=tx.map(t=>`
     <tr>
-      <td>${esc(t.date||"")}</td>
+      <td>${esc(shortDate(t.date))}</td>
       <td>${esc(t.desc||"")}</td>
       <td>${Number(t.credit||0)?money(t.credit):"-"}</td>
       <td>${Number(t.debit||0)?money(t.debit):"-"}</td>
