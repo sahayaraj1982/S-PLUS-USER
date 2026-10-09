@@ -5,20 +5,32 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>S PLUS LOAN APP - User</title>
 <style>
-:root{--gold:#ffd700;--bg:#111;--card:#202020;--green:#25d366}
+:root{--gold:#f5c451;--bg:#071426;--card:#10243d;--green:#25d366;--blue:#1677ff;--cyan:#45d6ff}
 *{box-sizing:border-box}
-body{margin:0;background:#111;color:#fff;font-family:Segoe UI,Arial,sans-serif}
-.app{max-width:560px;min-height:100vh;margin:auto;background:#111}
-header{background:linear-gradient(145deg,#ffd700,#9b7b00);color:#111;min-height:86px;padding:8px 52px 8px 12px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:21px;position:relative;box-shadow:0 3px 12px #000}
-.header-datetime{position:absolute;left:10px;top:7px;text-align:left;line-height:1.08;font-weight:900;font-size:14px;border:2px solid #6b6b6b;border-radius:8px;padding:6px 9px;background:rgba(20,20,20,.30);box-shadow:0 0 0 1px rgba(255,255,255,.18),0 2px 7px rgba(0,0,0,.35);min-width:76px}
-.header-date{font-size:15px;color:#111}.header-time{font-size:13px;margin-top:5px;color:#111}
-.brand{font-size:21px;font-weight:1000;line-height:1;white-space:nowrap}.brand-s{font-size:30px;font-weight:1000;line-height:1;margin-right:2px}.gled{position:absolute;right:13px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#111;color:#0f0;border:2px solid #0f0;box-shadow:0 0 13px #0f0;font-weight:900}
-.login{padding:35px 20px}
-.login h2{text-align:center;color:var(--gold);margin-bottom:25px}
-input{width:100%;padding:13px;margin:7px 0;border-radius:9px;border:1px solid #555;background:#222;color:#fff;font-size:16px}
-.login button,.action{width:100%;border:0;border-radius:9px;padding:13px;font-weight:900;font-size:16px;cursor:pointer}
-.gold{background:var(--gold);color:#111}
-.err{color:#ff5555;text-align:center;min-height:22px;margin-top:8px;font-weight:bold}
+body{margin:0;background:radial-gradient(circle at 50% 0%,#173b66 0,#08172b 48%,#050b14 100%);color:#fff;font-family:Segoe UI,Arial,sans-serif}
+.app{max-width:560px;min-height:100vh;margin:auto;background:transparent;box-shadow:0 0 50px #0005}
+header{background:linear-gradient(135deg,#0e2a4d,#1264b5 55%,#1a9acb);color:#fff;min-height:112px;padding:24px 18px;display:flex;align-items:center;justify-content:center;font-weight:900;position:relative;box-shadow:0 8px 25px #0007;border-bottom:3px solid #f5c451}
+.brand{font-size:27px;font-weight:1000;line-height:1.1;white-space:nowrap;letter-spacing:1px;text-shadow:0 3px 12px #001a33}
+.brand-s{display:none}
+.brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:25px;font-weight:1000;line-height:1.1;white-space:nowrap;letter-spacing:1.1px;text-align:center;text-shadow:0 2px 0 #06305c,0 4px 0 #06264a,0 7px 16px #001a33,0 0 18px #45d6ff66;max-width:calc(100% - 130px);background:linear-gradient(180deg,#ffffff 0%,#d9f5ff 38%,#f5c451 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 5px #45d6ff44)}
+.gled{position:absolute;right:13px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#071426;color:#55ff82;border:2px solid #55ff82;box-shadow:0 0 13px #21ff67;font-weight:900}
+.logout-btn{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:auto;border:1px solid #ff8585;border-radius:7px;padding:7px 8px;background:linear-gradient(135deg,#ff6969,#b90018);color:#fff;font-size:10px;font-weight:900;cursor:pointer;box-shadow:0 3px 10px #0006;letter-spacing:.2px}
+.login-spinner{display:none;position:relative;margin:20px auto 0;width:58px;height:58px;border-radius:50%;background:conic-gradient(from 0deg,#45d6ff,#1677ff,#f5c451,#ff6b78,#45d6ff);animation:loginSpin .9s linear infinite;box-shadow:0 0 22px #45d6ff55}
+.login-spinner:before{content:"";position:absolute;inset:6px;border-radius:50%;background:#08172b;border:2px solid #ffffff22}
+.login-spinner:after{content:"S+";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:1000;text-shadow:0 0 8px #45d6ff}
+.login-spinner.active{display:block}
+@keyframes loginSpin{to{transform:rotate(360deg)}}
+@media(max-width:420px){header{padding-left:78px;padding-right:55px}.brand{font-size:17px;max-width:calc(100% - 120px);letter-spacing:.2px}.logout-btn{left:7px;padding:6px 6px;font-size:9px}.gled{right:8px;width:30px;height:30px}}
+ .login{padding:30px 24px 40px;min-height:calc(100vh - 112px);display:flex;flex-direction:column;justify-content:center;position:relative}
+.login:before{content:"";position:absolute;inset:22px 12px 28px;border:1px solid #3da8ff55;border-radius:28px;pointer-events:none;box-shadow:inset 0 0 35px #147bd51a,0 18px 40px #0004}
+.login h2{position:relative;text-align:center;color:#fff;margin:0 0 28px;font-size:25px;font-weight:1000;letter-spacing:1.4px}
+.login h2:before{content:"";display:block;width:76px;height:76px;margin:0 auto 17px;border-radius:22px;background:linear-gradient(145deg,#39b9ff,#1454c8);box-shadow:0 9px 0 #092d69,0 14px 28px #0007;border:1px solid #8bdcff}
+.login h2:after{content:"S+";position:absolute;left:50%;top:17px;transform:translateX(-50%);font-size:30px;font-weight:1000;color:#fff;text-shadow:0 2px 7px #00316a}
+input{position:relative;width:100%;padding:15px 16px;margin:7px 0 14px;border-radius:13px;border:1px solid #3f6d9c;background:#08182a;color:#fff;font-size:16px;box-shadow:inset 0 2px 7px #0005}
+.login button,.action{position:relative;width:100%;border:0;border-radius:13px;padding:15px;font-weight:1000;font-size:16px;cursor:pointer;letter-spacing:1px;transition:transform .15s,filter .15s}
+.login button:active{transform:translateY(2px)}
+.gold{background:linear-gradient(135deg,#ffe08a,#f2b82e);color:#15233a;box-shadow:0 5px 0 #9b6c0a,0 10px 20px #0005}
+.err{position:relative;color:#ff6b78;text-align:center;min-height:22px;margin-top:14px;font-weight:bold}
 .hidden{display:none!important}
 .user-head{padding:15px 15px 8px;text-align:center}
 .user-name{font-size:24px;font-weight:900;color:var(--gold)}
@@ -39,7 +51,11 @@ tr.tx-debit td{background:#c9151b;color:#fff;border-color:#e12b31}
 tr.tx-neutral td{background:#292929;color:#fff}
 .empty{text-align:center;color:#aaa;padding:25px}
 .loading{text-align:center;color:#aaa;padding:30px}
-@media(max-width:420px){header{min-height:86px}.brand{font-size:18px}.brand-s{font-size:27px}.header-date{font-size:14px}.header-time{font-size:12px}.user-name{font-size:21px}.balance{font-size:25px}.table-wrap{margin-left:8px;margin-right:8px}.table-wrap table{width:100%!important;min-width:0!important}.table-wrap th{font-size:11px;padding:8px 1px}.table-wrap td{font-size:12px;padding:9px 1px}.table-wrap th:nth-child(1){width:19%}.table-wrap th:nth-child(2){width:24%}.table-wrap th:nth-child(3){width:17%}.table-wrap th:nth-child(4){width:17%}.table-wrap th:nth-child(5){width:23%}.balance-cell{font-size:11px!important}}
+tr.tx-neutral td{background:#292300!important;color:#ffe16b!important;border-top:1px solid #b88b12!important;border-bottom:1px solid #b88b12!important;animation:pendingGlow 1.6s ease-in-out infinite}
+tr.tx-neutral td.balance-cell{color:transparent!important;text-shadow:none!important}
+@keyframes pendingGlow{0%,100%{background-color:#292300;box-shadow:inset 0 0 2px #f5c45122}50%{background-color:#574500;box-shadow:inset 0 0 14px #ffd84d88}}
+@media(prefers-reduced-motion:reduce){tr.tx-neutral td{animation:none}}
+@media(max-width:420px){header{min-height:100px;padding:20px 48px 20px 12px}.brand{font-size:22px}.brand-s{display:none}.user-name{font-size:21px}.balance{font-size:25px}.table-wrap{margin-left:8px;margin-right:8px}.table-wrap table{width:100%!important;min-width:0!important}.table-wrap th{font-size:11px;padding:8px 1px}.table-wrap td{font-size:12px;padding:9px 1px}.table-wrap th:nth-child(1){width:19%}.table-wrap th:nth-child(2){width:24%}.table-wrap th:nth-child(3){width:17%}.table-wrap th:nth-child(4){width:17%}.table-wrap th:nth-child(5){width:23%}.balance-cell{font-size:11px!important}.login{padding:25px 18px 35px}.login h2{font-size:22px}}.brand{font-size:18px}.brand-s{font-size:27px}.header-date{font-size:14px}.header-time{font-size:12px}.user-name{font-size:21px}.balance{font-size:25px}.table-wrap{margin-left:8px;margin-right:8px}.table-wrap table{width:100%!important;min-width:0!important}.table-wrap th{font-size:11px;padding:8px 1px}.table-wrap td{font-size:12px;padding:9px 1px}.table-wrap th:nth-child(1){width:19%}.table-wrap th:nth-child(2){width:24%}.table-wrap th:nth-child(3){width:17%}.table-wrap th:nth-child(4){width:17%}.table-wrap th:nth-child(5){width:23%}.balance-cell{font-size:11px!important}}
 @media print{
   body{background:#fff;color:#111}
   .app{max-width:none}
@@ -56,12 +72,9 @@ tr.tx-neutral td{background:#292929;color:#fff}
 <div class="app">
 
 <header>
-  <div class="header-datetime">
-    <div id="headerDate" class="header-date"></div>
-    <div id="headerTime" class="header-time"></div>
-  </div>
-  <div class="brand"><span class="brand-s">S</span> PLUS LOAN</div>
-  <span class="gled">G</span>
+  <button id="logoutBtn" class="logout-btn hidden" type="button" onclick="logoutUser()">LOG OUT</button>
+  <div class="brand">S PLUS LOAN APP</div>
+  <span class="gled" aria-label="Connection status">G</span>
 </header>
 
 <div id="loginPage" class="login">
@@ -69,6 +82,7 @@ tr.tx-neutral td{background:#292929;color:#fff}
   <input id="userPassword" type="password" placeholder="Password" autocomplete="current-password">
   <button class="gold" onclick="loginUser()">LOGIN</button>
   <div id="loginError" class="err"></div>
+  <div id="loginSpinner" class="login-spinner" role="status" aria-label="Loading"></div>
 </div>
 
 <div id="userPage" class="hidden">
@@ -155,12 +169,20 @@ async function loginUser(){
     return;
   }
 
+  const spinner=document.getElementById("loginSpinner");
+  const loginButton=document.querySelector("#loginPage button");
+  spinner.classList.add("active");
+  loginButton.disabled=true;
+  loginButton.style.opacity=".7";
   err.style.color="#aaa";
-  err.textContent="Loading...";
+  err.textContent="உள்நுழைகிறது...";
 
   try{
     await loadCloud();
   }catch(e){
+    spinner.classList.remove("active");
+    loginButton.disabled=false;
+    loginButton.style.opacity="";
     err.style.color="#ff5555";
     err.textContent="Cloud connection கிடைக்கவில்லை.";
     return;
@@ -171,35 +193,34 @@ async function loginUser(){
   );
 
   if(matches.length===0){
+    spinner.classList.remove("active");
+    loginButton.disabled=false;
+    loginButton.style.opacity="";
     err.style.color="#ff5555";
     err.textContent="Password தவறாக உள்ளது.";
     return;
   }
 
   if(matches.length>1){
+    spinner.classList.remove("active");
+    loginButton.disabled=false;
+    loginButton.style.opacity="";
     err.style.color="#ff5555";
     err.textContent="இந்த Password ஒன்றுக்கும் மேற்பட்ட Users-க்கு உள்ளது. தனிப்பட்ட Password பயன்படுத்தவும்.";
     return;
   }
 
   currentUser=matches[0];
+  spinner.classList.remove("active");
+  loginButton.disabled=false;
+  loginButton.style.opacity="";
   showUser();
 }
-
-function updateHeaderDateTime(){
-  const now=new Date();
-  const d=now.getDate();
-  const m=now.getMonth()+1;
-  const y=String(now.getFullYear()).slice(-2);
-  document.getElementById("headerDate").textContent=`${d}-${m}-${y}`;
-  document.getElementById("headerTime").textContent=now.toLocaleTimeString("en-IN",{hour12:false});
-}
-updateHeaderDateTime();
-setInterval(updateHeaderDateTime,1000);
 
 function showUser(){
   document.getElementById("loginPage").classList.add("hidden");
   document.getElementById("userPage").classList.remove("hidden");
+  document.getElementById("logoutBtn").classList.remove("hidden");
 
   const leader=database.leaders.find(l=>String(l.id||"")===String(currentUser.leaderId||""));
 
@@ -231,9 +252,25 @@ function showUser(){
       <td class="desc">${esc(t.desc||"")}</td>
       <td class="credit">${Number(t.credit||0)?money(t.credit):"-"}</td>
       <td class="debit">${Number(t.debit||0)?money(t.debit):"-"}</td>
-      <td class="balance-cell">${money(x.balance)}</td>
+      <td class="balance-cell">${(Number(t.credit||0)===0 && Number(t.debit||0)===0) ? "-" : money(x.balance)}</td>
     </tr>`;
   }).join("");
+}
+
+function logoutUser(){
+  currentUser=null;
+  document.getElementById("userPage").classList.add("hidden");
+  document.getElementById("loginPage").classList.remove("hidden");
+  document.getElementById("logoutBtn").classList.add("hidden");
+  document.getElementById("userPassword").value="";
+  document.getElementById("loginError").textContent="";
+  document.getElementById("loginError").style.color="#ff6b78";
+  document.getElementById("loginSpinner").classList.remove("active");
+  document.getElementById("userName").textContent="";
+  document.getElementById("userMobile").textContent="";
+  document.getElementById("userLeader").textContent="";
+  document.getElementById("totalBalance").textContent="₹ 0";
+  document.getElementById("transactions").innerHTML="";
 }
 
 function shareWhatsApp(){
